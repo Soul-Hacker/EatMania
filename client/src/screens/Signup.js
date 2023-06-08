@@ -8,14 +8,7 @@ export default function Signup() {
     const [credentials, setcredentials] = useState({ name: "", email: "", password: "", geolocation: "" })
 
     const handleClick = () => {
-        Swal({
-            title: 'Good Job!',
-            text: 'Now we are redirecting you to the login page',
-            icon: 'success',
-            button: 'OK',
-        }).then(() => {
-            window.location.href = '/login';
-        });
+       
     }
 
     const handlesubmit = async (e) => {
@@ -38,6 +31,16 @@ export default function Signup() {
                 button: 'OK',
             })
             // alert("enter vlaid credentials");
+        }
+        else{
+            Swal({
+                title: 'Good Job!',
+                text: 'Now we are redirecting you to the login page',
+                icon: 'success',
+                button: 'OK',
+            }).then(() => {
+                window.location.href = 'https://eatmania.onrender.com/login';
+            });
         }
     }
     const onChange = (e) => {
